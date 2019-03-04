@@ -1,0 +1,23 @@
+[core]
+	editor = code --wait
+	excludesfile = ~/.gitignore_global
+
+[github]
+	user = frankois
+
+[user]
+	name = Francois DECOURCELLE
+	email = francois.decourcelle@cern.ch
+
+[alias]
+    st = status -s
+    ci = commit
+    co = checkout
+    br = branch
+	pr = "!f() { git fetch -fu ${2:-upstream} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
