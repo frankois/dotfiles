@@ -1,0 +1,26 @@
+# Aliases Pyhton
+alias py2='/usr/bin/python2.7'
+alias pi='pip install'
+alias pf='pip freeze'
+alias pr='pip uninstall'
+alias pl='pip list'
+
+# Aliases bash
+alias ..='cd ..'
+alias h='man'
+alias g='hub'
+
+# Aliases directories
+alias invs='cd /Users/fdecourc/SW_cern/invenio_software/'
+alias invp='cd /Users/fdecourc/SW_cern/invenio_projects/'
+alias zens='cd /Users/fdecourc/SW_cern/zenodo_software/'
+alias zenp='cd /Users/fdecourc/SW_cern/zenodo_projects/'
+
+alias bi='brew install'
+alias bu='brew update'
+alias br='brew remove'
+
+alias da='deactivate'
+
+# Docker aliases
+alias dka='docker kill $(docker ps -q)'

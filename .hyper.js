@@ -12,13 +12,19 @@ module.exports = {
     fontSize: 12,
 
     // font family with optional fallbacks
-    fontFamily: 'Meslo LG M DZ for Powerline, Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: '"Hack Nerd Font", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
 
     // font weight for bold characters: 'normal' or 'bold'
-    fontWeightBold: 'normal',
+    fontWeightBold: 'bold',
+
+    // line height as a relative unit
+    lineHeight: 1,
+
+    // letter spacing as a relative unit
+    letterSpacing: 0,
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: 'rgba(248,28,229,0.8)',
@@ -37,7 +43,7 @@ module.exports = {
 
     // terminal background color
     // opacity is only supported on macOS
-    backgroundColor: '#1C1C1C',
+    backgroundColor: '#000',
 
     // terminal selection color
     selectionColor: 'rgba(248,28,229,0.3)',
@@ -123,6 +129,31 @@ module.exports = {
     // bellSoundURL: 'http://example.com/bell.mp3',
 
     // for advanced config flags please refer to https://hyper.is/#cfg
+
+    paneNavigation: {
+      debug: false,
+      hotkeys: {
+        navigation: {
+          up: 'meta+up',
+          down: 'meta+down',
+          left: 'meta+left',
+          right: 'meta+right'
+        },
+        jump_prefix: 'meta', // completed with 1-9 digits
+        permutation_modifier: 'shift', // Added to jump and navigation hotkeys for pane permutation
+        maximize: 'meta+enter'
+      },
+      showIndicators: true, // Show pane number
+      indicatorPrefix: '', // Will be completed with pane number
+      indicatorStyle: { // Added to indicator <div>
+        position: 'absolute',
+        top: '10px',
+        right: '10px',
+        fontSize: '10px'
+      },
+      focusOnMouseHover: false,
+      inactivePaneOpacity: 0.6 // Set to 1 to disable inactive panes dimming
+    },
   },
 
   // a list of plugins to fetch and install from npm
@@ -131,7 +162,9 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: [],
+  plugins: ["hyper-pane"],
+
+
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
@@ -142,4 +175,6 @@ module.exports = {
     // Example
     // 'window:devtools': 'cmd+alt+o',
   },
+
+
 };

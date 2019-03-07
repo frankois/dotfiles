@@ -4,13 +4,22 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/fdecourc/.oh-my-zsh"
 
+# DOTFILES_LOCATION=$(cat /Users/fdecourc/SW_misc/dotfiles)
+
+# for DOTFILE in /Users/fdecourc/SW_misc/dotfiles/.{aliases}
+# do
+#   [ -f “$DOTFILE” ] && source “$DOTFILE”
+#   echo $DOTFILE
+# done
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel9k/powerlevel9k"
-#ZSH_THEME="spaceship"
+# ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="spaceship"
+# ZSH_THEME="bira"
 # ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
@@ -127,10 +136,10 @@ alias h='man'
 alias g='hub'
 
 # Aliases directories
-alias invs='cd /Users/fdecourc/dev_cern/invenio_software/'
-alias invp='cd /Users/fdecourc/dev_cern/invenio_projects/'
-alias zens='cd /Users/fdecourc/dev_cern/zenodo_software/'
-alias zenp='cd /Users/fdecourc/dev_cern/zenodo_projects/'
+alias invs='cd /Users/fdecourc/SW_cern/invenio_software/'
+alias invp='cd /Users/fdecourc/SW_cern/invenio_projects/'
+alias zens='cd /Users/fdecourc/SW_cern/zenodo_software/'
+alias zenp='cd /Users/fdecourc/SW_cern/zenodo_projects/'
 
 alias bi='brew install'
 alias bu='brew update'
@@ -141,11 +150,6 @@ alias da='deactivate'
 # Docker aliases
 alias dka='docker kill $(docker ps -q)'
 
-# Venv display
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv)
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv root_indicator background_jobs status load virtualenv)
-
 
 # Spaceship
 # ORDER
@@ -155,35 +159,47 @@ SPACESHIP_PROMPT_ORDER=(
   vi_mode  # these sections will be
   user     # before prompt char
   host     #
-  char
+  # char
   dir
   git
+  vi_mode
+  line_sep
+  char
 )
 
+
 # USER
-SPACESHIP_USER_PREFIX="" # remove `with` before username
-SPACESHIP_USER_SUFFIX="" # remove space before host
+# SPACESHIP_USER_PREFIX="" # remove `with` before username
+# SPACESHIP_USER_SUFFIX="" # remove space before host
 
-# HOST
-# Result will look like this:
-#   username@:(hostname)
-SPACESHIP_HOST_PREFIX="@:("
-SPACESHIP_HOST_SUFFIX=") "
+# # HOST
+# # Result will look like this:
+# #   username@:(hostname)
+# SPACESHIP_HOST_PREFIX="@:("
+# SPACESHIP_HOST_SUFFIX=") "
 
-# DIR
-SPACESHIP_DIR_PREFIX='' # disable directory prefix, cause it's not the first section
-SPACESHIP_DIR_TRUNC='1' # show only last directory
+# # DIR
+# SPACESHIP_DIR_PREFIX='' # disable directory prefix, cause it's not the first section
+# SPACESHIP_DIR_TRUNC='1' # show only last directory
 
-# GIT
-# Wrap git in `git:(...)`
-SPACESHIP_GIT_PREFIX='git:('
-SPACESHIP_GIT_SUFFIX=") "
+# # GIT
+# # Wrap git in `git:(...)`
+# SPACESHIP_GIT_PREFIX='git:('
+# SPACESHIP_GIT_SUFFIX=") "
 
-# VENV
-# SPACESHIP_VENV_PREFIX="venv:("
-SPACESHIP_VENV_SUFFIX=" "
+# # VENV
+# # SPACESHIP_VENV_PREFIX="venv:("
+# SPACESHIP_VENV_SUFFIX=" "
+
 
 ## PW9
+
+# Venv display
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv root_indicator background_jobs status load virtualenv)
+
+
 
 POWERLEVEL9K_MODE='nerdfont-complete'
 #POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
