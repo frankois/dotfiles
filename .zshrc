@@ -21,12 +21,8 @@ export ZSH="/Users/fdecourc/.oh-my-zsh"
 ZSH_THEME="spaceship"
 # ZSH_THEME="bira"
 # ZSH_THEME="agnoster"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
- ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "powerlevel9k/powerlevel9k" "spaceship")
+# ZSH_THEME="avit"
+# ZSH_THEME="ys"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -48,10 +44,10 @@ ZSH_THEME="spaceship"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="false"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -167,6 +163,19 @@ SPACESHIP_PROMPT_ORDER=(
   char
 )
 
+SPACESHIP_GIT_SYMBOL=$'\uf113 '
+SPACESHIP_GIT_STATUS_PREFIX=' '
+SPACESHIP_GIT_STATUS_SUFFIX=''
+SPACESHIP_GIT_STATUS_UNTRACKED=$'\uf059 '
+SPACESHIP_GIT_STATUS_ADDED=$'\uF055 '
+SPACESHIP_GIT_STATUS_MODIFIED=$'\uF06A '
+SPACESHIP_GIT_STATUS_RENAMED=$'\uf45a '
+SPACESHIP_GIT_STATUS_DELETED=$'\uf056 '
+SPACESHIP_GIT_STATUS_STASHED=$'\uF01C '
+SPACESHIP_GIT_STATUS_AHEAD=$'\uF01B '
+SPACESHIP_GIT_STATUS_BEHIND=$'\uF01A '
+SPACESHIP_GIT_BRANCH_PREFIX=$'\uf113 '
+SPACESHIP_GIT_STATUS_DIVERGED=$'\uf47f '
 
 # USER
 # SPACESHIP_USER_PREFIX="" # remove `with` before username
