@@ -2,11 +2,15 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/fdecourc/.oh-my-zsh"
+export ZSH="/Users/Frankois/.oh-my-zsh"
 
-# DOTFILES_LOCATION=$(cat /Users/fdecourc/SW_misc/dotfiles)
+# Fixing home bug
+export LANG=en_US.UTF-8
+# export LC_ALL=en_US.UTF-8
 
-# for DOTFILE in /Users/fdecourc/SW_misc/dotfiles/.{aliases}
+# DOTFILES_LOCATION=$(cat /Users/Frankois/SW_misc/dotfiles)
+
+# for DOTFILE in /Users/Frankois/SW_misc/dotfiles/.{aliases}
 # do
 #   [ -f “$DOTFILE” ] && source “$DOTFILE”
 #   echo $DOTFILE
@@ -110,12 +114,14 @@ alias zshconfig="nano ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Virtualenvwrapper
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3  # HOME_FIX
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/bin/virtualenv  # HOME_FIX
 export WORKON_HOME=~/.virtualenvs
 mkdir -p $WORKON_HOME
 source /usr/local/bin/virtualenvwrapper.sh
 
 # Pyenv
-export PATH="/Users/fdecourc/.pyenv/bin:$PATH"
+export PATH="/Users/Frankois/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
@@ -132,10 +138,10 @@ alias h='man'
 alias g='hub'
 
 # Aliases directories
-alias invs='cd /Users/fdecourc/SW_cern/invenio_software/'
-alias invp='cd /Users/fdecourc/SW_cern/invenio_projects/'
-alias zens='cd /Users/fdecourc/SW_cern/zenodo_software/'
-alias zenp='cd /Users/fdecourc/SW_cern/zenodo_projects/'
+alias invs='cd /Users/Frankois/SW_cern/invenio_software/'
+alias invp='cd /Users/Frankois/SW_cern/invenio_projects/'
+alias zens='cd /Users/Frankois/SW_cern/zenodo_software/'
+alias zenp='cd /Users/Frankois/SW_cern/zenodo_projects/'
 
 alias bi='brew install'
 alias bu='brew update'
