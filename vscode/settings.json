@@ -1,0 +1,56 @@
+{
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "editor.rulers": [
+        80,
+    ],
+    "editor.formatOnSave": false,
+    "python.linting.enabled": true,
+    "python.pythonPath": "/usr/local/bin/python2.7",
+
+    // LINTER
+    "python.linting.pylintPath": "/usr/local/bin/pylint",
+    "python.linting.pylintEnabled": true,
+    "python.linting.pep8Enabled": true,
+    "python.linting.flake8Enabled": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        ".vscode": true,
+        "**/*.pyc": true
+    },
+
+    "team.showWelcomeMessage": false,
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.explorerKind": "external",
+    "window.zoomLevel": -1,
+    "breadcrumbs.enabled": true,
+    "python.venvPath": "~/.virtualenvs",
+    "editor.minimap.enabled": true,
+
+    // MISC
+    "files.autoSave": "onFocusChange",
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+
+    // Use ZSH
+    "terminal.integrated.shell.osx": "zsh",
+    //"terminal.integrated.fontFamily": "'Meslo LG M DZ for Powerline'",
+    "terminal.integrated.fontFamily": "Hack Nerd Font",
+
+    "[html]": {
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        //"editor.formatOnSave": true,
+      },
+
+    "[markdown]": {
+        "files.trimTrailingWhitespace": false,
+    }
+}
