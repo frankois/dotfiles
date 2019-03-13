@@ -8,25 +8,11 @@ export ZSH="/Users/fdecourc/.oh-my-zsh"
 export LANG=en_US.UTF-8
 # export LC_ALL=en_US.UTF-8
 
-# DOTFILES_LOCATION=$(cat /Users/fdecourc/SW_misc/dotfiles)
-
-# for DOTFILE in /Users/fdecourc/SW_misc/dotfiles/.{aliases}
-# do
-#   [ -f “$DOTFILE” ] && source “$DOTFILE”
-#   echo $DOTFILE
-# done
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-# ZSH_THEME="powerlevel9k/powerlevel9k"
 ZSH_THEME="spaceship"
-# ZSH_THEME="bira"
-# ZSH_THEME="agnoster"
-# ZSH_THEME="avit"
-# ZSH_THEME="ys"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -80,6 +66,7 @@ plugins=(
   virtualenv
   zsh-syntax-highlighting
   ssh-agent
+  z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -110,8 +97,8 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="nano ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="vim ~/.zshrc"
+# alias ohmyzsh="vim ~/.oh-my-zsh"
 
 # Virtualenvwrapper
 # export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3  # HOME_FIX
@@ -161,7 +148,6 @@ SPACESHIP_PROMPT_ORDER=(
   vi_mode  # these sections will be
   user     # before prompt char
   host     #
-  # char
   dir
   git
   vi_mode
@@ -180,77 +166,4 @@ SPACESHIP_GIT_STATUS_DELETED=$'\uf056 '
 SPACESHIP_GIT_STATUS_STASHED=$'\uF01C '
 SPACESHIP_GIT_STATUS_AHEAD=$'\uF01B '
 SPACESHIP_GIT_STATUS_BEHIND=$'\uF01A '
-# SPACESHIP_GIT_BRANCH_PREFIX=$'\uf113 '
 SPACESHIP_GIT_STATUS_DIVERGED=$'\uf47f '
-
-# USER
-# SPACESHIP_USER_PREFIX="" # remove `with` before username
-# SPACESHIP_USER_SUFFIX="" # remove space before host
-
-# # HOST
-# # Result will look like this:
-# #   username@:(hostname)
-# SPACESHIP_HOST_PREFIX="@:("
-# SPACESHIP_HOST_SUFFIX=") "
-
-# # DIR
-# SPACESHIP_DIR_PREFIX='' # disable directory prefix, cause it's not the first section
-# SPACESHIP_DIR_TRUNC='1' # show only last directory
-
-# # GIT
-# # Wrap git in `git:(...)`
-# SPACESHIP_GIT_PREFIX='git:('
-# SPACESHIP_GIT_SUFFIX=") "
-
-# # VENV
-# # SPACESHIP_VENV_PREFIX="venv:("
-# SPACESHIP_VENV_SUFFIX=" "
-
-
-## PW9
-
-# Venv display
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv)
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv root_indicator background_jobs status load virtualenv)
-
-
-
-POWERLEVEL9K_MODE='nerdfont-complete'
-#POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
-#POWERLEVEL9K_SHORTEN_DELIMITER=""
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=''
-POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=''
-POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR=''
-POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR=''
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{blue}\u256D\u2500%F{white}"
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{blue}\u2570\uf460%F{white} "
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator virtualenv dir dir_writable_joined)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time
-                                    vcs background_jobs_joined time_joined)
-POWERLEVEL9K_VCS_MODIFIED_BACKGROUND="clear"
-POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND="clear"
-POWERLEVEL9K_VCS_MODIFIED_FOREGROUND="yellow"
-POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND="yellow"
-POWERLEVEL9K_DIR_HOME_BACKGROUND="clear"
-POWERLEVEL9K_DIR_HOME_FOREGROUND="blue"
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="clear"
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="blue"
-POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_BACKGROUND="clear"
-POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND="red"
-POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="clear"
-POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
-POWERLEVEL9K_ROOT_INDICATOR_BACKGROUND="red"
-POWERLEVEL9K_ROOT_INDICATOR_FOREGROUND="white"
-POWERLEVEL9K_STATUS_OK_BACKGROUND="clear"
-POWERLEVEL9K_STATUS_OK_FOREGROUND="green"
-POWERLEVEL9K_STATUS_ERROR_BACKGROUND="clear"
-POWERLEVEL9K_STATUS_ERROR_FOREGROUND="red"
-POWERLEVEL9K_TIME_BACKGROUND="clear"
-POWERLEVEL9K_TIME_FOREGROUND="cyan"
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='clear'
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='magenta'
-POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND='clear'
-POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND='green'
