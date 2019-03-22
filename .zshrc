@@ -145,7 +145,7 @@ alias dka='docker kill $(docker ps -q)'
 SPACESHIP_PROMPT_ORDER=(
   venv
   time     #
-  vi_mode  # these sections will be
+#  vi_mode  # these sections will be
   user     # before prompt char
   host     #
   dir
@@ -154,6 +154,8 @@ SPACESHIP_PROMPT_ORDER=(
   line_sep
   char
 )
+
+SPACESHIP_VI_MODE_COLOR='grey'
 
 SPACESHIP_GIT_SYMBOL=$'\uf113 '
 SPACESHIP_GIT_STATUS_PREFIX=' '
