@@ -114,10 +114,10 @@ eval "$(pyenv virtualenv-init -)"
 
 # Aliases Pyhton
 alias py2='/usr/bin/python2.7'
-alias pi='pip install'
-alias pf='pip freeze'
-alias pr='pip uninstall'
-alias pl='pip list'
+alias pi='noglob pip install'
+alias pf='noglob pip freeze'
+alias pr='noglob pip uninstall'
+alias pl='noglob pip list'
 
 # Aliases bash
 alias ..='cd ..'

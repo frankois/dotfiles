@@ -134,10 +134,10 @@ module.exports = {
       debug: false,
       hotkeys: {
         navigation: {
-          up: 'meta+up',
-          down: 'meta+down',
-          left: 'meta+left',
-          right: 'meta+right'
+          up: 'shift+meta+up',
+          down: 'shift+meta+down',
+          left: 'shift+meta+left',
+          right: 'shift+meta+right'
         },
         jump_prefix: 'meta', // completed with 1-9 digits
         permutation_modifier: 'shift', // Added to jump and navigation hotkeys for pane permutation
@@ -162,7 +162,14 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ["hyper-pane"],
+  plugins: [
+    "hyper-pane",
+    "hyper-material-theme",
+    "hyper-search"
+    // "hyper-dracula"
+    // 'hyper-solarized-dark'
+  ],
+
 
 
 
