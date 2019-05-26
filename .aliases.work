@@ -1,0 +1,6 @@
+# - navigation 
+alias invs='cd /Users/fdecourc/SW_cern/invenio_software/'
+alias invp='cd /Users/fdecourc/SW_cern/invenio_projects/'
+alias zens='cd /Users/fdecourc/SW_cern/zenodo_software/'
+alias zenp='cd /Users/fdecourc/SW_cern/zenodo_projects/'
+

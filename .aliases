@@ -1,26 +1,46 @@
-# Aliases Pyhton
+# ----------------------------------------------------------------------------
+# ALIASES
+# - python
 alias py2='/usr/bin/python2.7'
-alias pi='pip install'
-alias pf='pip freeze'
-alias pr='pip uninstall'
-alias pl='pip list'
+alias pi='noglob pip install'
+alias pf='noglob pip freeze'
+alias pr='noglob pip uninstall'
+alias pl='noglob pip list'
+alias black='black -l 79'
 
-# Aliases bash
+# - shell 
 alias ..='cd ..'
 alias h='man'
 alias g='hub'
+alias zreload='source ~/.zshrc'
+alias breload='source ~/.bash_profile'
+alias lxplus='ssh fdecourc@lxplus.cern.ch'
 
-# Aliases directories
-alias invs='cd /Users/fdecourc/SW_cern/invenio_software/'
-alias invp='cd /Users/fdecourc/SW_cern/invenio_projects/'
-alias zens='cd /Users/fdecourc/SW_cern/zenodo_software/'
-alias zenp='cd /Users/fdecourc/SW_cern/zenodo_projects/'
+# - config
+alias vimconfig="vim ~/.vimrc"
+alias vimlocal="vim ~/.vimrc.local"
 
+alias zshconfig="vim ~/.zshrc"
+alias zshlocal="vim ~/.zshrc.local"
+alias omzconfig="vim ~/.oh-my-zsh"
+
+alias bashconfig="vim ~/.bash_profile"
+
+alias hyperconfig="vim ~/.hyper.js"
+
+alias aliases="vim ~/.aliases"
+alias haliases="vim ~/.aliases.home"
+alias waliases="vim ~/.aliases.work"
+
+# - brew
 alias bi='brew install'
 alias bu='brew update'
 alias br='brew remove'
 
 alias da='deactivate'
 
-# Docker aliases
+# - docker
 alias dka='docker kill $(docker ps -q)'
+
+# - other
+ctags=/usr/local/bin/ctags

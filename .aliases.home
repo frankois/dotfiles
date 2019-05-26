@@ -1,0 +1,6 @@
+# - navigation 
+alias invs='cd /Users/Frankois/Projects/SW_cern/invenio_software/'
+alias invp='cd /Users/Frankois/Projects/SW_cern/invenio_projects/'
+alias zens='cd /Users/Frankois/Projects/SW_cern/zenodo_software/'
+alias zenp='cd /Users/Frankois/Projects/SW_cern/zenodo_projects/'
+
