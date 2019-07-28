@@ -18,7 +18,7 @@
 *.iso
 *.rar
 *.tar
-#*.zip
+*.zip
 
 # Logs and databases #
 ######################
@@ -33,30 +33,9 @@ ehthumbs.db
 Icon?
 Thumbs.db
 
-# Eclipse project files #
-#########################
-#.project
-#.pydevproject
-#.buildpath
-#.settings/
-
-# Sublime project files #
-#########################
-*.sublime-project
-*.sublime-workspace
-
 # VSCode #
-#########################
+##########
 *.vscode
-
-# Android Studio
-########################
-.idea/
-.gradle
-*.iml
-*.iws
-*.ipr
-*.swp
 
 # NodeJS #
 ##########
@@ -66,3 +45,15 @@ node_modules/
 ##########
 docs/.doctrees/
 .pytest_cache/
+
+# Own #
+#######
+nogit/
+*.nogit
+*.nogit.*
+private/
+*.private
+*.private.*
+local/
+*.local
+*.local.*
