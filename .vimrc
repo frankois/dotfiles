@@ -41,6 +41,12 @@ Plugin 'junegunn/fzf.vim' 		" fuzzy searching
 " -- other
 Plugin 'vim-airline/vim-airline' 	" status bar
 
+" -- markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim' 
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -57,7 +63,7 @@ set mouse=a 			" allows use of the mouse
 set hlsearch 			" highlight search results
 set ignorecase 			" ignore case
 set incsearch 			" circular searching
-set clipboard=unnamedplus 	" point to system clipboard
+set clipboard=unnamed 	" point to system clipboard
 set tags=tags 			" necessary to use ctags
 
 syntax on 		" enable syntax
@@ -92,8 +98,26 @@ nnoremap <leader>m :nohl<cr>
 
 " put the line in the center when moving
 nnoremap gg ggzz
+nnoremap n nzz
 
-nnoremap <c-f> :Files<CR>
+nnoremap <c-g> :Files<CR>
+nnoremap <leader>j :%!jq .<CR>
+nnoremap <leader>d :%d<CR>
+nnoremap <Leader>b :ls<CR>:b<Space>
+map <leader>q :bn<bar>bd#<CR>
+
+" Terminal
+tnoremap <Esc> <C-W>N
+tnoremap <Esc><Esc> <C-W>N
+set timeout timeoutlen=1000  " Default
+set ttimeout ttimeoutlen=100  " Set by defaults.vim
+
+" Navigation windows
+let i = 1
+while i <= 9
+    execute 'nnoremap <Leader>' . i . ' :' . i . 'wincmd w<CR>'
+    let i = i + 1
+endwhile
 
 " ----------------------------------------------------------------------------
 " EDITING
@@ -103,11 +127,12 @@ let python_self_cls_highlight = 1 	" add python keywords syntax
 let python_highlight_all=1 		" enable python-syntax plugin
 let g:black_linelength = 79 		" set black length compliant with PEP8
 
+au BufNewFile,BufRead *.* set ts=4 sts=4 sw=4 expandtab
+
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
-    \ set textwidth=79 |
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix
@@ -116,12 +141,13 @@ au BufNewFile,BufRead *.py
 " autocmd BufWritePre *.py execute ':Black'
 
 " - web
-au BufNewFile,BufRead *.js, *.html, *.css, *.yaml
+au BufNewFile,BufRead *.js, *.html, *.css, *.yaml, *.json
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2
 
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
 
 " - dotfiles
 autocmd BufNewFile,BufRead *.aliases*,*.test set syntax=sh
@@ -130,7 +156,10 @@ autocmd BufNewFile,BufRead *.aliases*,*.test set syntax=sh
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 
 " - all
-vnoremap <C-c> :w !pbcopy<CR><CR> 
+" vnoremap <C-c> :w !pbcopy<CR><CR> 
+" vmap <C-c> :w !pbcopy<CR><CR>
+
+" map <C-c> y:e ~/clipsongzboard<CR>P:w !pbcopy<CR><CR>:bdelete!<CR>
 map <C-n> :NERDTreeToggle<CR>
 
 " ----------------------------------------------------------------------------
@@ -140,6 +169,7 @@ let NERDTreeMinimalUI = 1 		" removes ?
 let NERDTreeDirArrows = 1 		" modify dir symbols
 let NERDTreeShowHidden=1 		" show hidden files
 let NERDTreeIgnore=['\.pyc$', '\~$'] 	" ignore files in NERDTree
+let g:nerdtree_tabs_autoclose=0
 set splitbelow 				" set opening behavior
 set splitright 				" set opening behavior
 
@@ -148,6 +178,7 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nmap ; :Buffers<CR>
 
 " ----------------------------------------------------------------------------
 " SIMPYLFOLD
@@ -161,6 +192,39 @@ set foldlevel=99
 nnoremap <space> za
 
 " ----------------------------------------------------------------------------
+" GOYO
+let g:goyo_width = 120
+nnoremap <leader>g :Goyo<CR>
+
+" LIMELIGHT
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+
+" Color name (:help gui-colors) or RGB color
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+
+" Default: 0.5
+let g:limelight_default_coefficient = 0.7
+
+" Number of preceding/following paragraphs to include (default: 0)
+let g:limelight_paragraph_span = 1
+
+" Beginning/end of paragraph
+"   When there's no empty line between the paragraphs
+"   and each paragraph starts with indentation
+let g:limelight_bop = '^\s'
+let g:limelight_eop = '\ze\n^\s'
+
+" Highlighting priority (default: 10)
+"   Set it to -1 not to overrule hlsearch
+let g:limelight_priority = -1
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoEnter highlight EndOfBuffer ctermfg=236
+autocmd! User GoyoLeave Limelight!
+
+" ----------------------------------------------------------------------------
 " OTHER 
 let g:jedi#auto_initialization = 0
 let g:jedi#auto_vim_configuration = 0
@@ -169,8 +233,12 @@ let g:rainbow_active = 1 		" enable Raibow at startup
 let g:auto_save = 1  			" enable AutoSave at startup
 let g:ale_sign_column_always = 1
 let g:airline#extensions#ale#enabled = 1 " Set this. Airline will handle the rest.
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 let g:ctrlp_show_hidden = 1
+let g:ale_python_flake8_executable = 'python3'   " or 'python' for Python 2
 
+" command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '--word-regexp', <bang>0)
 " ----------------------------------------------------------------------------
 " LOCAL
 " ! DO NOT PUT ANYTHING BELOW
