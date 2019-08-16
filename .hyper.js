@@ -147,6 +147,7 @@ module.exports = {
     "hyper-pane",
     "hyper-material-theme",
     "hyper-search",
+    "hypercwd",
   ],
 
 
