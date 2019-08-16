@@ -23,7 +23,7 @@ else
 			echo "$file NOT SYMLINKED"
 		else
 			echo "$file symlinked"
-			#ln -sfn $file ~ 
+			ln -sfn $file ~ 
 		fi
 	done
 fi
