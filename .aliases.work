@@ -4,3 +4,6 @@ alias invp='cd /Users/fdecourc/SW_cern/invenio_projects/'
 alias zens='cd /Users/fdecourc/SW_cern/zenodo_software/'
 alias zenp='cd /Users/fdecourc/SW_cern/zenodo_projects/'
 
+alias icloud='cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs'
+alias gfm='zsh ~/SW_misc/dotfiles/scripts/gfm.sh'
+alias gpr='zsh ~/SW_misc/dotfiles/scripts/gpr.sh'

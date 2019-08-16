@@ -52,5 +52,8 @@
 
     "[markdown]": {
         "files.trimTrailingWhitespace": false,
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
 }
