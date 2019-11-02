@@ -116,7 +116,7 @@ au BufNewFile,BufRead *.py
 " autocmd BufWritePre *.py execute ':Black'
 
 " - web
-au BufNewFile,BufRead *.js, *.html, *.css, *.yaml
+au BufNewFile,BufRead *.js, *.html, *.css, *.yaml, *.sh,
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2
@@ -183,4 +183,3 @@ function! SourceIfExists(file)
 endfunction
 
 call SourceIfExists('~/.vimrc.local')
-
