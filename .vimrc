@@ -106,19 +106,6 @@ nnoremap <leader>d :%d<CR>
 nnoremap <Leader>b :ls<CR>:b<Space>
 map <leader>q :bn<bar>bd#<CR>
 
-" Terminal
-tnoremap <Esc> <C-W>N
-tnoremap <Esc><Esc> <C-W>N
-set timeout timeoutlen=1000  " Default
-set ttimeout ttimeoutlen=100  " Set by defaults.vim
-
-" Navigation windows
-let i = 1
-while i <= 9
-    execute 'nnoremap <Leader>' . i . ' :' . i . 'wincmd w<CR>'
-    let i = i + 1
-endwhile
-
 " ----------------------------------------------------------------------------
 " EDITING
 " - python
