@@ -1,19 +1,20 @@
 # ----------------------------------------------------------------------------
 # CUSTOM
-if [ $HOST = "frankois_perso" ]
+if [ $HOST = "frankois_mini" ]
 then
 	echo "I am at home"
+	export ZSH="/Users/frankois/.oh-my-zsh"
+	export PATH="/Users/frankois/.pyenv/bin:$PATH"
+    #export NVM_DIR=~/.nvm
+    #source $(brew --prefix nvm)/nvm.sh
+
+	[ -f $HOME/.aliases.home ] && source $HOME/.aliases.home
+elif [ $HOST = "frankois_perso" ]
+then
+	echo "I am on the go"
 	export ZSH="/Users/Frankois/.oh-my-zsh"
 	export PATH="/Users/Frankois/.pyenv/bin:$PATH"
-    export NVM_DIR=~/.nvm
-    source $(brew --prefix nvm)/nvm.sh
 	[ -f $HOME/.aliases.home ] && source $HOME/.aliases.home
-elif [ $HOST = "frankois_pro" ]
-then
-	echo "I am at work"
-	export ZSH="/Users/fdecourc/.oh-my-zsh"
-	export PATH="/Users/fdecourc/.pyenv/bin:$PATH"
-	[ -f $HOME/.aliases.work ] && source $HOME/.aliases.work
 else
 	echo "I don't know where I am... I am scared !!!"
 fi
@@ -44,16 +45,15 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 bindkey '^ ' autosuggest-accept
-# bindkey '^ ' autosuggest-execute
 
 # ----------------------------------------------------------------------------
 # PYTHON
 # - virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3  # HOME_FIX
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/bin/virtualenv  # HOME_FIX
-export WORKON_HOME=~/.virtualenvs
-mkdir -p $WORKON_HOME
-source /usr/local/bin/virtualenvwrapper.sh
+#export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3  # HOME_FIX
+#export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/bin/virtualenv  # HOME_FIX
+#export WORKON_HOME=~/.virtualenvs
+#mkdir -p $WORKON_HOME
+#source /usr/local/bin/virtualenvwrapper.sh
 
 # - pyenv
 eval "$(pyenv init -)"
@@ -65,9 +65,9 @@ eval "$(pyenv virtualenv-init -)"
 # - order
 SPACESHIP_PROMPT_ORDER=(
   venv
-  time     
-  user     
-  host    
+  time
+  user
+  host
   dir
   git
   vi_mode
@@ -75,7 +75,7 @@ SPACESHIP_PROMPT_ORDER=(
   char
 )
 
-# - vim 
+# - vim
 SPACESHIP_VI_MODE_COLOR='grey'
 
 # - git
@@ -93,9 +93,6 @@ SPACESHIP_GIT_STATUS_BEHIND=$'\uF01A '
 SPACESHIP_GIT_STATUS_DIVERGED=$'\uf47f '
 
 # ----------------------------------------------------------------------------
-# TESTING
-# echo -e -n "\x1b[\x35 q" # changes to blinking bar
-
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 # ----------------------------------------------------------------------------
@@ -103,3 +100,4 @@ SPACESHIP_GIT_STATUS_DIVERGED=$'\uf47f '
 # ! DO NOT PUT ANYTHING BELOW
 # loading local configuration if exists
 [ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
+source /Users/frankois/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

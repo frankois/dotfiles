@@ -3,9 +3,9 @@
 if [ "$HOSTNAME" = "frankois_perso" ];
 then
 	dotfiles=$HOME/Projects/SW_misc/dotfiles
-elif [ $HOSTNAME = "frankois_pro" ];
+elif [ $HOSTNAME = "frankois_mini" ];
 then
-	dotfiles=$HOME/SW_misc/dotfiles
+	dotfiles=$HOME/Projects/SW_misc/dotfiles
 else
 	echo "HELP!! WHERE AM I?"
 fi
@@ -23,7 +23,7 @@ else
 			echo "$file NOT SYMLINKED"
 		else
 			echo "$file symlinked"
-			ln -sfn $file ~ 
+			ln -sfn $file ~
 		fi
 	done
 f:q
@@ -61,9 +61,8 @@ for file in "$HOME"/.[!.]*
 do
 	filename=$(basename $file)
 	if [[ -L $file ]]; then
-		ln -sfn 
+		ln -sfn
 		echo $file
 	fi
 done
 '
-
