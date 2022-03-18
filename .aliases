@@ -44,3 +44,4 @@ alias dka='docker kill $(docker ps -q)'
 
 # - other
 ctags=/usr/local/bin/ctags
+alias composer="php /usr/local/bin/composer.phar"

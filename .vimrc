@@ -14,7 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'kh3phr3n/python-syntax' 	" improve python syntax
 Plugin 'raimon49/requirements.txt.vim' 	" requirements.txt syntax
 Plugin 'vim-scripts/indentpython.vim' 	" handle python indentation
-Plugin 'python/black' 			" formatting
+"Plugin 'python/black' 			" formatting
 Plugin 'nvie/vim-flake8' 		" linting
 
 " -- editing

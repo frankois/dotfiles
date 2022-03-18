@@ -5,6 +5,8 @@ then
 	echo "I am at home"
 	export ZSH="/Users/Frankois/.oh-my-zsh"
 	export PATH="/Users/Frankois/.pyenv/bin:$PATH"
+    export NVM_DIR=~/.nvm
+    source $(brew --prefix nvm)/nvm.sh
 	[ -f $HOME/.aliases.home ] && source $HOME/.aliases.home
 elif [ $HOST = "frankois_pro" ]
 then

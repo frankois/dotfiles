@@ -26,8 +26,8 @@ else
 			ln -sfn $file ~ 
 		fi
 	done
-fi
-
+f:q
+lk:q
 # ----------------------------------------------------------------------------
 # SANDBOX
 : ' TODO:	- ADD PROTECTION IN V2 if exsits

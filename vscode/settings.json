@@ -1,6 +1,7 @@
 {
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
+    "files.insertFinalNewline": true,
     "editor.rulers": [
         80,
     ],
@@ -42,6 +43,7 @@
     "terminal.integrated.shell.osx": "zsh",
     //"terminal.integrated.fontFamily": "'Meslo LG M DZ for Powerline'",
     "terminal.integrated.fontFamily": "Hack Nerd Font",
+    "restructuredtext.sphinxBuildPath": "/usr/local/opt/sphinx-doc/bin"
 
     "[html]": {
         "editor.detectIndentation": false,
