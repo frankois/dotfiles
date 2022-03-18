@@ -55,6 +55,9 @@ nogit/
 private/
 *.private
 *.private.*
+private_*
+*_private.*
 local/
 *.local
 *.local.*
+TODO.*
